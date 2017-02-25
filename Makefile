@@ -1,5 +1,7 @@
 #MakeFile
 #Author: Venkata Naveen Reddy Yalla
+#Author: Manasa Reddy Gurrala
+#Author: Karthik Varma
 
 all:clean setup compile bigtest
 
