@@ -54,6 +54,35 @@ import  sdrctrl_package::*;
 //**********************************************************
 
 
+//----------------------------------------------------------
+//          SDRAM memory Signals for classes in bfm
+//----------------------------------------------------------
+    logic               sdr_cke;
+    logic               sdr_cs_n;
+    logic               sdr_ras_n;
+    logic               sdr_cas_n;
+    logic               sdr_we_n;
+//----------------------------------------------------------
+
+
+//--------------------------------------------------------
+//          Wishbone signals
+//--------------------------------------------------------
+    logic               sdr_init_done      ; // SDRAM Init Done - from sdrc top
+//********************************************************
+
+
+//--------------------------------------------------------
+// data/address/burst length FIFO
+//--------------------------------------------------------
+    int     dfifo[$]; // data fifo
+    int     afifo[$]; // address  fifo
+    int     bfifo[$]; // Burst Length fifo
+//********************************************************
+
+wire #(2.0) sdram_clk_d   = sdram_clk; //signal is being sent to memory IP's.
+
+
 initial sys_clk = 0;
 initial sdram_clk = 0;
 
@@ -62,8 +91,7 @@ always #(P_SDR/2) sdram_clk = !sdram_clk;
 
 
 
-task initialization (/*input sys_clk*/);
-   //ErrCnt         = 0;        //will be writing this in checker
+task initialization ();
    wb_addr_i      = 0;
    wb_dat_i       = 0;
    wb_sel_i       = 4'h0;
