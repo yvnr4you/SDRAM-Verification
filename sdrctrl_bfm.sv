@@ -71,16 +71,14 @@ import  sdrctrl_package::*;
     logic               sdr_init_done      ; // SDRAM Init Done - from sdrc top
 //********************************************************
 
+int dfifo[$];
+int afifo[$];
+int bfifo[$];
+logic [7:0] bl;
+logic write_done;
+logic read_init;
 
-//--------------------------------------------------------
-// data/address/burst length FIFO
-//--------------------------------------------------------
-    int     dfifo[$]; // data fifo
-    int     afifo[$]; // address  fifo
-    int     bfifo[$]; // Burst Length fifo
-//********************************************************
-
-wire #(2.0) sdram_clk_d   = sdram_clk; //signal is being sent to memory IP's.
+wire #(2.0) sdram_clk_d   = bfm.sdram_clk; //signal is being sent to memory IP's.
 
 
 initial sys_clk = 0;
@@ -92,6 +90,8 @@ always #(P_SDR/2) sdram_clk = !sdram_clk;
 
 
 task initialization ();
+   read_init      = 0;
+   write_done     = 0;
    wb_addr_i      = 0;
    wb_dat_i       = 0;
    wb_sel_i       = 4'h0;
@@ -108,8 +108,8 @@ task initialization ();
   // Releasing reset
   RESETN    = 1'h1;
   repeat (1000) @(negedge sys_clk);
-  //wait(u_dut.sdr_init_done == 1);       //Need to use this before generating stimulus
-  
+ // wait(sdr_init_done == 1);       //Need to use this before generating stimulus
+  	
 endtask
 
 endinterface

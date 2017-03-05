@@ -118,8 +118,8 @@ mt48lc8m8a2 #(.data_bits(8)) u_sdram8 (
 initial
 begin
     testbench_h = new(bfm);
-    bfm.initialization();
-    wait(bfm.sdr_init_done == 1);
+     bfm.initialization();
+     wait(bfm.sdr_init_done == 1'b1);
     testbench_h.execute();
 end
 
