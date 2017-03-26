@@ -1,0 +1,186 @@
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /sdrctrl_package/coverage/addr_cov                85.4%        100    Uncovered            
+    covered/total bins:                                    37         68                      
+    missing/total bins:                                    31         68                      
+    % Hit:                                              54.4%        100                      
+    Coverpoint addr_cov::row_cov                        66.6%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                          66.6%        100                      
+    Coverpoint addr_cov::col_cov                       100.0%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint addr_cov::bank_cov                      100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint addr_cov::bank_trans                    100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint addr_cov::read_write_trans              100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+    Coverpoint addr_cov::rst_trans                     100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+    Cross addr_cov::tot_addr_cov                        16.6%        100    Uncovered            
+        covered/total bins:                                 6         36                      
+        missing/total bins:                                30         36                      
+        % Hit:                                          16.6%        100                      
+    Cross addr_cov::rw_full_trans                      100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+ CLASS coverage
+ Covergroup instance \/sdrctrl_package::coverage::addr_cov  
+                                                        85.4%        100    Uncovered            
+    covered/total bins:                                    37         68                      
+    missing/total bins:                                    31         68                      
+    % Hit:                                              54.4%        100                      
+    Coverpoint row_cov                                  66.6%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                          66.6%        100                      
+        bin l_row                                        5848          1    Covered              
+        bin m_row                                           0          1    ZERO                 
+        bin h_row                                        1012          1    Covered              
+    Coverpoint col_cov                                 100.0%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                         100.0%        100                      
+        bin l_col                                       19088          1    Covered              
+        bin m_col                                       30396          1    Covered              
+        bin h_col                                       29535          1    Covered              
+    Coverpoint bank_cov                                100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin ba0                                         15090          1    Covered              
+        bin ba1                                         12263          1    Covered              
+        bin ba2                                         22596          1    Covered              
+        bin ba3                                         29070          1    Covered              
+    Coverpoint bank_trans                              100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin bank0_1                                         4          1    Covered              
+        bin bank1_2                                         7          1    Covered              
+        bin bank2_3                                         4          1    Covered              
+        bin bank3_0                                         7          1    Covered              
+    Coverpoint read_write_trans                        100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin r_to_r                                      55547          1    Covered              
+        bin r_to_w                                         16          1    Covered              
+        bin r_to_x                                         25          1    Covered              
+        bin w_to_w                                      23422          1    Covered              
+        bin w_to_r                                         16          1    Covered              
+        bin w_to_x                                         24          1    Covered              
+        bin x_to_r                                         25          1    Covered              
+        bin x_to_w                                         24          1    Covered              
+    Coverpoint rst_trans                               100.0%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                         100.0%        100                      
+        bin rst                                             3          1    Covered              
+        bin not_rst                                     79065          1    Covered              
+    Cross tot_addr_cov                                  16.6%        100    Uncovered            
+        covered/total bins:                                 6         36                      
+        missing/total bins:                                30         36                      
+        % Hit:                                          16.6%        100                      
+        bin <l_row,l_col,ba0>                            2558          1    Covered              
+        bin <l_row,m_col,ba0>                            2422          1    Covered              
+        bin <h_row,m_col,ba0>                             168          1    Covered              
+        bin <l_row,h_col,ba0>                             868          1    Covered              
+        bin <h_row,h_col,ba0>                             634          1    Covered              
+        bin <h_row,l_col,ba1>                             210          1    Covered              
+        bin <m_row,l_col,ba0>                               0          1    ZERO                 
+        bin <h_row,l_col,ba0>                               0          1    ZERO                 
+        bin <m_row,m_col,ba0>                               0          1    ZERO                 
+        bin <m_row,h_col,ba0>                               0          1    ZERO                 
+        bin <l_row,l_col,ba1>                               0          1    ZERO                 
+        bin <m_row,l_col,ba1>                               0          1    ZERO                 
+        bin <l_row,m_col,ba1>                               0          1    ZERO                 
+        bin <m_row,m_col,ba1>                               0          1    ZERO                 
+        bin <h_row,m_col,ba1>                               0          1    ZERO                 
+        bin <l_row,h_col,ba1>                               0          1    ZERO                 
+        bin <m_row,h_col,ba1>                               0          1    ZERO                 
+        bin <h_row,h_col,ba1>                               0          1    ZERO                 
+        bin <l_row,l_col,ba2>                               0          1    ZERO                 
+        bin <m_row,l_col,ba2>                               0          1    ZERO                 
+        bin <h_row,l_col,ba2>                               0          1    ZERO                 
+        bin <l_row,m_col,ba2>                               0          1    ZERO                 
+        bin <m_row,m_col,ba2>                               0          1    ZERO                 
+        bin <h_row,m_col,ba2>                               0          1    ZERO                 
+        bin <l_row,h_col,ba2>                               0          1    ZERO                 
+        bin <m_row,h_col,ba2>                               0          1    ZERO                 
+        bin <h_row,h_col,ba2>                               0          1    ZERO                 
+        bin <l_row,l_col,ba3>                               0          1    ZERO                 
+        bin <m_row,l_col,ba3>                               0          1    ZERO                 
+        bin <h_row,l_col,ba3>                               0          1    ZERO                 
+        bin <l_row,m_col,ba3>                               0          1    ZERO                 
+        bin <m_row,m_col,ba3>                               0          1    ZERO                 
+        bin <h_row,m_col,ba3>                               0          1    ZERO                 
+        bin <l_row,h_col,ba3>                               0          1    ZERO                 
+        bin <m_row,h_col,ba3>                               0          1    ZERO                 
+        bin <h_row,h_col,ba3>                               0          1    ZERO                 
+    Cross rw_full_trans                                100.0%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                         100.0%        100                      
+        bin <r_to_r,not_rst>                            55544          1    Covered              
+        bin <w_to_r,not_rst>                               16          1    Covered              
+        bin <r_to_x,not_rst>                               25          1    Covered              
+        bin <x_to_r,not_rst>                               25          1    Covered              
+        bin <r_to_w,not_rst>                               16          1    Covered              
+        bin <w_to_x,not_rst>                               24          1    Covered              
+        bin <w_to_w,not_rst>                            23422          1    Covered              
+        bin <x_to_w,not_rst>                               24          1    Covered              
+        ignore_bin others_only                              3               Occurred             
+ TYPE /sdrctrl_package/coverage/fsm_cov                 77.7%        100    Uncovered            
+    covered/total bins:                                    14         19                      
+    missing/total bins:                                     5         19                      
+    % Hit:                                              73.6%        100                      
+    Coverpoint fsm_cov::req_st_trans                    66.6%        100    Uncovered            
+        covered/total bins:                                 2          3                      
+        missing/total bins:                                 1          3                      
+        % Hit:                                          66.6%        100                      
+        bin st1                                         58863          1    Covered              
+        bin st2                                         20202          1    Covered              
+        bin st3                                             0          1    ZERO                 
+    Coverpoint fsm_cov::xfrfsm_trans                   100.0%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                         100.0%        100                      
+        bin st1                                         41433          1    Covered              
+        bin st2                                         14760          1    Covered              
+        bin st3                                          7624          1    Covered              
+        bin st4                                         15248          1    Covered              
+    Cross fsm_cov::req_xfr_cross                        66.6%        100    Uncovered            
+        covered/total bins:                                 8         12                      
+        missing/total bins:                                 4         12                      
+        % Hit:                                          66.6%        100                      
+        bin <st1,st1>                                   28623          1    Covered              
+        bin <st2,st1>                                   12810          1    Covered              
+        bin <st1,st2>                                    7410          1    Covered              
+        bin <st2,st2>                                    7350          1    Covered              
+        bin <st1,st3>                                    7616          1    Covered              
+        bin <st2,st3>                                       8          1    Covered              
+        bin <st1,st4>                                   15214          1    Covered              
+        bin <st2,st4>                                      34          1    Covered              
+        bin <st3,st1>                                       0          1    ZERO                 
+        bin <st3,st2>                                       0          1    ZERO                 
+        bin <st3,st3>                                       0          1    ZERO                 
+        bin <st3,st4>                                       0          1    ZERO                 
+ CLASS coverage
+
+TOTAL COVERGROUP COVERAGE: 81.5%  COVERGROUP TYPES: 2

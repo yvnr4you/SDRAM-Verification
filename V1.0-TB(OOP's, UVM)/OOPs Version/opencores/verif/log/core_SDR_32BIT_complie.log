@@ -1,0 +1,17 @@
+** Note: (vlog-1901) OptionFile "C:/cygwin/home/Dinesh/projects/sdr_ctrl/sdr_ctrl/trunk/verif/run/vlog.opt" not found. Ignored.
+Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+-- Compiling module tb_core
+-- Compiling module IS42VM16400K
+-- Compiling module mt48lc2m32b2
+-- Compiling module mt48lc8m8a2
+-- Compiling module sdrc_core
+-- Compiling module sdrc_bank_ctl
+-- Compiling module sdrc_bank_fsm
+-- Compiling module sdrc_bs_convert
+-- Compiling module sdrc_req_gen
+-- Compiling module sdrc_xfr_ctl
+
+Top level modules:
+	tb_core
+	IS42VM16400K
+	mt48lc8m8a2
